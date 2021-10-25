@@ -1,43 +1,60 @@
 package com.wema.kata;
 
+import java.util.Arrays;
+
+import com.wema.kata.rules.Rule;
+
 public class FooBarQix {
 
 	private static final String FOO = "Foo";
 	private static final String BAR = "Bar";
 	private static final String QIX = "Qix";
 
-
-	public String compute(int number) {
+	public String compute(String numberToCompute) {
 		StringBuilder result = new StringBuilder();
-		if (number % 3 == 0) {
-			result.append(FOO);
-		}
-		if (number % 5 == 0) {
-			result.append(BAR);
-		}
-		if (number % 7 == 0) {
-			result.append(QIX);
-		}
-		char[] charArrayOfNumber = String.valueOf(number).toCharArray();
+
+		Rule ruleForNumberThree = new Rule(3, FOO);
+		Rule ruleForNumberFive = new Rule(5, BAR);
+		Rule ruleForNumberSeven = new Rule(7, QIX);
+		Rule[] rules = {ruleForNumberThree, ruleForNumberFive, ruleForNumberSeven};
+		
+		result.append(computeDevidedNumber(numberToCompute, rules));
+
+		char[] charArrayOfNumber = String.valueOf(numberToCompute).toCharArray();
 		for (char caracter : charArrayOfNumber) {
-			if (caracter == '3') {
-				result.append(FOO);
-			}
-			if (caracter == '5') {
-				result.append(BAR);
-			}
-			if (caracter == '7') {
-				result.append(QIX);
-			}
+			result.append(computeContainNumber(caracter, rules));
 		}
 
 		// if number is not devised by 3 or not contain 3, then we return the same
 		// number
 		if (result.length() == 0) {
-			result.append(number);
+			return numberToCompute;
 		}
 
 		return result.toString();
+	}
+
+	private String computeContainNumber(char caracter, Rule[] rules) {
+		StringBuilder containNumberResult = new StringBuilder();
+
+		Arrays.stream(rules).forEach(rule -> {
+			if (Character.getNumericValue(caracter) == rule.getNumber()) {
+				containNumberResult.append(rule.getReplacement());
+			}
+		});
+		return containNumberResult.toString();
+	}
+
+	private String computeDevidedNumber(String numberToCompute, Rule[] rules) {
+		StringBuilder devideNumberResult = new StringBuilder();
+		int number = Integer.parseInt(numberToCompute);
+		
+		Arrays.stream(rules).forEach(rule -> {
+			if (number % rule.getNumber() == 0) {
+				devideNumberResult.append(rule.getReplacement());
+			}
+		});
+		return devideNumberResult.toString();
 	}
 
 }
