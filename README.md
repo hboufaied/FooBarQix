@@ -1,4 +1,6 @@
 # FooBarQix
+<img src="https://app.travis-ci.com/hboufaied/FooBarQix.svg?branch=main" alt="Build Status" />
+
 
 ## Statement
 You should implement a function String compute(String) which implements the following rules.
@@ -37,15 +39,23 @@ Was developed and tested with:
 - Maven 3.8.3
 - Eclipse IDE 2021‑09
 - JDK 11
+- Git
 
 ### Solution
 For each number passed to the compute method, we must check if this number is divisible by 3, 5 and 7 and in each case we replace the number with the string that corresponds (3 => Foo, 5 => Bar, 7 => Qix)
 
 After we convert the number into a string, we go through each character to replace 3, 5 and 7 by "Foo", "Bar" and "Qix"
 
+To compute the entry number for all possibles rules that can be added already, I use a class Rule, this call is initialized with a number to check (for division and contains check) and the replacement string.
+
 ## Run
 
-To run and test the kata, you can run the maven command
+To run and test the kata, you can checkout the git project and run the maven command
+
 ```
-mvn clean install
+git clone https://github.com/hboufaied/FooBarQix.git
+```
+
+```
+mvn clean test
 ```

@@ -42,4 +42,17 @@ public class FooBarQixTest {
 		final String value = fooBarQix.compute("15");
 		assertThat(value).isEqualTo("FooBarBar");
 	}
+	
+	@Test
+	public void shouldReturnFooFooFooWhenNumberIs33() {
+		final String value = fooBarQix.compute("33");
+		assertThat(value).isEqualTo("FooFooFoo");
+	}
+	
+	@Test
+	public void shouldReturnBarFooWhenNumberIs53() {
+		final String value = fooBarQix.compute("53");
+		assertThat(value).isEqualTo("BarFoo");
+	}
+
 }
