@@ -3,7 +3,7 @@ package com.wema.kata;
 public class FooBarQix {
 
 	public String compute(int number) {
-		return String.valueOf(number);
+		return null;
 	}
 
 }
