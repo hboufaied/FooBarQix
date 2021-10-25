@@ -30,4 +30,10 @@ public class FooBarQixTest {
 		final String value = fooBarQix.compute(6);
 		assertThat(value).isEqualTo("Foo");
 	}
+	
+	@Test
+	public void shouldReturnQixQixWhenNumberIs7() {
+		final String value = fooBarQix.compute(7);
+		assertThat(value).isEqualTo("QixQix");
+	}
 }
