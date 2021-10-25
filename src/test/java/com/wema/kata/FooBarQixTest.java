@@ -13,4 +13,9 @@ public class FooBarQixTest {
 		assertThat(value).isEqualTo("1");
 	}
 
+	@Test
+	public void shouldReturnFooFooWhenNumberIs3() {
+		final String value = fooBarQix.compute(3);
+		assertThat(value).isEqualTo("FooFoo");
+	}
 }
