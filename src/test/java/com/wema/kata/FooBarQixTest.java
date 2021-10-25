@@ -1,6 +1,8 @@
 package com.wema.kata;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import org.junit.jupiter.api.Test;
 
 public class FooBarQixTest {
@@ -53,6 +55,14 @@ public class FooBarQixTest {
 	public void shouldReturnBarFooWhenNumberIs53() {
 		final String value = fooBarQix.compute("53");
 		assertThat(value).isEqualTo("BarFoo");
+	}
+	
+	@Test
+	public void shouldReturnNumberFormatExceptionWhenIsNotANumber() {
+		NumberFormatException exception = assertThrows(NumberFormatException.class, () -> {
+			fooBarQix.compute("not a number");
+        });
+		assertThat(exception).isInstanceOf(NumberFormatException.class);
 	}
 
 }
