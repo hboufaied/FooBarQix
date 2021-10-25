@@ -32,4 +32,20 @@ Examples
 
 ## Implementation
 
+### Environment
+Was developed and tested with:
+- Maven 3.8.3
+- Eclipse IDE 2021‑09
+- JDK 11
+
+### Solution
+For each number passed to the compute method, we must check if this number is divisible by 3, 5 and 7 and in each case we replace the number with the string that corresponds (3 => Foo, 5 => Bar, 7 => Qix)
+
+After we convert the number into a string, we go through each character to replace 3, 5 and 7 by "Foo", "Bar" and "Qix"
+
 ## Run
+
+To run and test the kata, you can run the maven command
+```
+mvn clean install
+```
