@@ -68,7 +68,19 @@ public class FooBarQixTest {
 	@Test
 	public void shouldReturn1Start1WhenNumberIs101() {
 		final String value = fooBarQix.compute("101");
-		assertThat(value).isEqualTo("1*1");
+		assertThat(value).isEqualTo("*");
+	}
+	
+	@Test
+	public void shouldReturnFooFooStartFooWhenNumberIs303() {
+		final String value = fooBarQix.compute("303");
+		assertThat(value).isEqualTo("FooFoo*Foo");
+	}
+
+	@Test
+	public void shouldReturnFooQixStartStarWhenNumberIs10101() {
+		final String value = fooBarQix.compute("10101");
+		assertThat(value).isEqualTo("FooQix**");
 	}
 
 }
