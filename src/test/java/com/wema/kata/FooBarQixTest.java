@@ -64,5 +64,11 @@ public class FooBarQixTest {
         });
 		assertThat(exception).isInstanceOf(NumberFormatException.class);
 	}
+	
+	@Test
+	public void shouldReturn1Start1WhenNumberIs101() {
+		final String value = fooBarQix.compute("101");
+		assertThat(value).isEqualTo("1*1");
+	}
 
 }
