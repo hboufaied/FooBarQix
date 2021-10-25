@@ -2,21 +2,26 @@ package com.wema.kata;
 
 public class FooBarQix {
 
+	private static final String FOO = "Foo";
+
 	public String compute(int number) {
-		StringBuilder sb = new StringBuilder();
+		StringBuilder result = new StringBuilder();
 		if (number % 3 == 0) {
-			sb.append("Foo");
+			result.append(FOO);
 		}
 		char[] charArrayOfNumber = String.valueOf(number).toCharArray();
 		for (char caracter : charArrayOfNumber) {
 			if (caracter == '3') {
-				sb.append("Foo");
+				result.append(FOO);
 			}
 		}
-		if(sb.length() == 0) {
-			sb.append(number);
+		
+		// if number is not devised by 3 or not contain 3, then we return the same number
+		if (result.length() == 0) {
+			result.append(number);
 		}
-		return sb.toString();
+		
+		return result.toString();
 	}
 
 }
