@@ -48,6 +48,9 @@ After we convert the number into a string, we go through each character to repla
 
 To compute the entry number for all possibles rules that can be added already, I use a class Rule, this call is initialized with a number to check (for division and contains check) and the replacement string.
 
+For Step 2, we need to keep only the character '0', at the end we method replace("0", "*") to replace all existing 0 with *.
+
+
 ## Run
 
 To run and test the kata, you can checkout the git project and run the maven command
