@@ -18,4 +18,10 @@ public class FooBarQixTest {
 		final String value = fooBarQix.compute(3);
 		assertThat(value).isEqualTo("FooFoo");
 	}
+	
+	@Test
+	public void shouldReturnBarBarWhenNumberIs5() {
+		final String value = fooBarQix.compute(5);
+		assertThat(value).isEqualTo("BarBar");
+	}
 }
