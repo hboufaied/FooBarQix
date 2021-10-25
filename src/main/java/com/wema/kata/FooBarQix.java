@@ -4,6 +4,8 @@ public class FooBarQix {
 
 	private static final String FOO = "Foo";
 	private static final String BAR = "Bar";
+	private static final String QIX = "Qix";
+
 
 	public String compute(int number) {
 		StringBuilder result = new StringBuilder();
@@ -13,6 +15,9 @@ public class FooBarQix {
 		if (number % 5 == 0) {
 			result.append(BAR);
 		}
+		if (number % 7 == 0) {
+			result.append(QIX);
+		}
 		char[] charArrayOfNumber = String.valueOf(number).toCharArray();
 		for (char caracter : charArrayOfNumber) {
 			if (caracter == '3') {
@@ -20,6 +25,9 @@ public class FooBarQix {
 			}
 			if (caracter == '5') {
 				result.append(BAR);
+			}
+			if (caracter == '7') {
+				result.append(QIX);
 			}
 		}
 
