@@ -24,4 +24,10 @@ public class FooBarQixTest {
 		final String value = fooBarQix.compute(5);
 		assertThat(value).isEqualTo("BarBar");
 	}
+	
+	@Test
+	public void shouldReturnFooWhenNumberIs6() {
+		final String value = fooBarQix.compute(6);
+		assertThat(value).isEqualTo("Foo");
+	}
 }
