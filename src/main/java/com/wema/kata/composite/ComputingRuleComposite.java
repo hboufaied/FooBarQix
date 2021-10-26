@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.wema.kata.SubstitutionEnum;
-import com.wema.kata.component.ComputingRule;
+import com.wema.kata.rules.ComputingRule;
 
 public class ComputingRuleComposite {
 

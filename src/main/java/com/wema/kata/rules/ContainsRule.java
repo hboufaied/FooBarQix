@@ -1,7 +1,4 @@
-package com.wema.kata.leaf;
-
-import com.wema.kata.component.ComputingRule;
-import com.wema.kata.rules.Rule;
+package com.wema.kata.rules;
 
 public class ContainsRule implements ComputingRule {
 

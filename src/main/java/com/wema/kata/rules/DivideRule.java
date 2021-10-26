@@ -1,9 +1,6 @@
-package com.wema.kata.leaf;
+package com.wema.kata.rules;
 
 import java.util.Arrays;
-
-import com.wema.kata.component.ComputingRule;
-import com.wema.kata.rules.Rule;
 
 public class DivideRule implements ComputingRule {
 

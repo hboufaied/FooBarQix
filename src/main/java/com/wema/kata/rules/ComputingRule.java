@@ -1,4 +1,4 @@
-package com.wema.kata.component;
+package com.wema.kata.rules;
 
 public interface ComputingRule {
 
