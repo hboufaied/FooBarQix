@@ -50,6 +50,11 @@ To compute the entry number for all possibles rules that can be added already, I
 
 For Step 2, we need to keep only the character '0', at the end we method replace("0", "*") to replace all existing 0 with *.
 
+### Code Refactoring
+In order to make our code more clear and apply the SRP, we create a concrete class for ContainsRule and DivideRule with a method apply() to compute and substitue the initialNumber according to rules param.
+Then the client can use the class ComputingRuleComposite to compute his number by adding one or more computingRule.
+
+For this part, I used the composite pattern : https://refactoring.guru/design-patterns/composite
 
 ## Run
 
